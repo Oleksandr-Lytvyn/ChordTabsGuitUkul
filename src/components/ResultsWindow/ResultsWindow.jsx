@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import { GuitarTabsList } from '../GuitarTabsList/GuitarTabsList';
-import { UkuleleTabsList } from '../UkuleleTabsList/UkuleleTabsList';
+// import { GuitarTabsList } from '../GuitarTabsList/GuitarTabsList';
+// import { UkuleleTabsList } from '../UkuleleTabsList/UkuleleTabsList';
 import { WebMidiWindow } from '../WebMidiWindow/WebMidiWindow';
 
 export const ResultsWindow = ({ i, ch }) => {
@@ -8,7 +8,12 @@ export const ResultsWindow = ({ i, ch }) => {
 
   return (
     <>
-      <WebMidiWindow i={i} ch={ch} note={notes} setNotes={setNotes}></WebMidiWindow>
+      <WebMidiWindow
+        i={i}
+        ch={ch}
+        note={notes}
+        setNotes={setNotes}
+      ></WebMidiWindow>
     </>
   );
 };
