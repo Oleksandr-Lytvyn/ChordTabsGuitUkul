@@ -18,7 +18,7 @@ export function App() {
 
   return (
     <>
-      <Navigation sk={setKey} k={key} ss={setSuffix} i={setInstrument} />
+      <Navigation sk={setKey} k={key} ss={setSuffix} si={setInstrument} />
       {chord && <ResultsWindow ch={chord} i={instrument} />}
     </>
   );

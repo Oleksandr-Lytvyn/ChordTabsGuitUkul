@@ -9,7 +9,8 @@ export const KeyList = styled.ul`
 `;
 
 export const KeyItem = styled.li`
-  background-color: #f5f3e8;
+  /* background-color: #f5f3e8; */
+  background-color: ${props => (props.active ? 'green' : '#f5f3e8')};
   border-radius: 4px;
   padding: 10px;
 

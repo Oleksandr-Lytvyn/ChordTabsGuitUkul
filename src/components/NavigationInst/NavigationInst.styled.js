@@ -7,6 +7,7 @@ export const StyledButton = styled.button`
   border: none;
   /* background-color: transparent; */
   background: ${props => (props.primary ? 'green' : 'transparent')};
+  color: ${props => (props.primary ? 'white' : 'gray')};
   border-bottom: 3px solid grey;
   cursor: pointer;
 `;

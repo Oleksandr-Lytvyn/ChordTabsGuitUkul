@@ -9,8 +9,24 @@ export const ListSuffixes = styled.ul`
 `;
 
 export const ListItem = styled.li`
-  background-color: ${props => (props.active ? 'green' : '#D0D0D0 ')};
-  color: ${props => (props.active ? 'white' : 'black ')};
+  background-color: ${props => {
+    if (props.isSelected) {
+      return 'transparent';
+    } else if (props.active) {
+      return 'green';
+    }
+    return '#D0D0D0';
+  }};
+  /* color: ${props => (props.active ? 'white' : 'black ')}; */
+  color: ${props => {
+    if (props.isSelected) {
+      return 'black';
+    } else if (props.active) {
+      return 'white';
+    }
+    return 'black';
+  }};
+  outline: ${props => (props.isSelected ? '1px solid black' : 'none')};
   font-weight: 300;
   border-radius: 2px;
   padding: 3px;
