@@ -1,30 +1,31 @@
-import { Button, BtnsList } from './NavigationInst.styled';
+import { StyledButton, StyledBtnsList } from './NavigationInst.styled';
 
 export const NavigationInst = ({ i }) => {
   return (
     <>
-      <BtnsList>
+      <StyledBtnsList>
         <li style={{ flexGrow: '1' }}>
-          <Button
+          <StyledButton
+            primary="thru"
             type="button"
             onClick={() => {
               i('guit');
             }}
           >
             guitar
-          </Button>
+          </StyledButton>
         </li>
         <li style={{ flexGrow: '1' }}>
-          <Button
+          <StyledButton
             type="button"
             onClick={() => {
               i('ukul');
             }}
           >
             ukulele
-          </Button>
+          </StyledButton>
         </li>
-      </BtnsList>
+      </StyledBtnsList>
     </>
   );
 };
