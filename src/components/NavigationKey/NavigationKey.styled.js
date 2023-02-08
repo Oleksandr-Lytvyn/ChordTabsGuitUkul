@@ -17,5 +17,6 @@ export const KeyItem = styled.li`
   :hover,
   :focus {
     cursor: pointer;
+    background-color: green;
   }
 `;

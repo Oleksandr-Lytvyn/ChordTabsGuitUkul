@@ -8,8 +8,12 @@ export const StyledButton = styled.button`
   /* background-color: transparent; */
   background: ${props => (props.primary ? 'green' : 'transparent')};
   color: ${props => (props.primary ? 'white' : 'gray')};
-  border-bottom: 3px solid grey;
+  border-bottom: 1px solid grey;
   cursor: pointer;
+  :hover {
+    /* background-color: #cee1ce; */
+    border-bottom: 2px solid grey;
+  }
 `;
 
 export const StyledBtnsList = styled.ul`

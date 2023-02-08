@@ -33,6 +33,9 @@ export const ListItem = styled.li`
   :hover,
   :focus {
     cursor: pointer;
+    background-color: transparent;
+    outline: 1px solid black;
+    color: black;
   }
 `;
 // rgb(178, 209, 215)
