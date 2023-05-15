@@ -7,10 +7,10 @@ import { ResultsWindow } from './components/ResultsWindow/ResultsWindow';
 import './index.css';
 
 export function App() {
+  const [instrument, setInstrument] = useState('guit');
   const [key, setKey] = useState('');
   const [suffix, setSuffix] = useState('');
   const [chord, setChord] = useState({});
-  const [instrument, setInstrument] = useState('guit');
   useEffect(() => {
     const findedChord = getChord(key, suffix, instrument);
     setChord(findedChord);

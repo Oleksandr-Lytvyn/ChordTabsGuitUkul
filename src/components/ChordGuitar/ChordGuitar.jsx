@@ -1,8 +1,11 @@
 import { nanoid } from 'nanoid';
+import { useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
 import {
   StyledChordGuitarWrapper,
   StyledChordGuitar,
 } from './ChordGuitar.styled';
+import { addMidi } from '../../redux/actions';
 
 const Finger = ({ step }) => {
   const finger = {};
@@ -62,11 +65,13 @@ const Finger = ({ step }) => {
 };
 
 export const ChordGuitar = ({ steps, midi, play, setNotes }) => {
+  const dispatch = useDispatch();
   return (
     <StyledChordGuitarWrapper>
       <div>
         <StyledChordGuitar
           onClick={e => {
+            dispatch(addMidi(midi));
             setNotes(midi);
             setTimeout(() => {
               play();

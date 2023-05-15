@@ -17,7 +17,6 @@ export const ListItem = styled.li`
     }
     return '#D0D0D0';
   }};
-  /* color: ${props => (props.active ? 'white' : 'black ')}; */
   color: ${props => {
     if (props.isSelected) {
       return 'black';
@@ -26,6 +25,7 @@ export const ListItem = styled.li`
     }
     return 'black';
   }};
+  text-shadow: 0 0 2px #000;
   outline: ${props => (props.isSelected ? '1px solid black' : 'none')};
   font-weight: 300;
   border-radius: 2px;

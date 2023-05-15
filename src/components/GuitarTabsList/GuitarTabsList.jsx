@@ -1,6 +1,8 @@
 import { nanoid } from 'nanoid';
+import { useSelector } from 'react-redux';
 import { StyledGuitarTabsList } from './GuitarTabsList.styled';
 import { Position } from './Position';
+
 export const GuitarTabsList = ({ chord, play, setNotes }) => {
   return (
     <>
@@ -13,7 +15,7 @@ export const GuitarTabsList = ({ chord, play, setNotes }) => {
         </h2>
         <ul style={{ display: 'flex', flexWrap: 'wrap', gap: '20px' }}>
           {Object.keys(chord).length > 0 &&
-            chord.positions.map((position) => {
+            chord.positions.map(position => {
               return (
                 <li key={nanoid()}>
                   <Position pos={position} play={play} setNotes={setNotes} />
