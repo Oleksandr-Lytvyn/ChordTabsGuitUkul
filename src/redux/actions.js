@@ -1,15 +1,5 @@
-export const addMidi = midi => {
-  return {
-    type: 'chord/addMidi',
-    payload: {
-      midi,
-    },
-  };
-};
+import { createAction } from '@reduxjs/toolkit';
 
-export const addKey = key => {
-  return {
-    type: 'all/addKey',
-    payload: key,
-  };
-};
+export const addKey = createAction('chord/addKey');
+
+export const addSuffix = createAction('chord/addSuffix');

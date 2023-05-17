@@ -1,20 +1,21 @@
-import { useState } from 'react';
 import { StyledButton, StyledBtnsList } from './NavigationInst.styled';
+import { useDispatch } from 'react-redux';
+import { addInstrument } from 'redux/slice';
+import { useSelector } from 'react-redux';
 
-export const NavigationInst = ({ si }) => {
-  const [guitActive, setGuitActive] = useState(false);
-  const [ukulActive, setUkulActive] = useState(false);
+export const NavigationInst = () => {
+  const activeInstrument = useSelector(state => state.instrument.instrument);
+
+  const dispatch = useDispatch();
   return (
     <>
       <StyledBtnsList>
         <li style={{ flexGrow: '1' }}>
           <StyledButton
-            primary={guitActive}
+            primary={activeInstrument === 'guit'}
             type="button"
             onClick={() => {
-              si('guit');
-              setGuitActive(true);
-              setUkulActive(false);
+              dispatch(addInstrument('guit'));
             }}
           >
             guitar
@@ -22,12 +23,10 @@ export const NavigationInst = ({ si }) => {
         </li>
         <li style={{ flexGrow: '1' }}>
           <StyledButton
-            primary={ukulActive}
+            primary={activeInstrument === 'ukul'}
             type="button"
             onClick={() => {
-              si('ukul');
-              setUkulActive(true);
-              setGuitActive(false);
+              dispatch(addInstrument('ukul'));
             }}
           >
             ukulele

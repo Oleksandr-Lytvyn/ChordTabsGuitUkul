@@ -1,16 +1,6 @@
-import { createStore } from 'redux';
-import { rootReducer } from './reducers';
-import { devToolsEnhancer } from '@redux-devtools/extension';
+import { configureStore } from '@reduxjs/toolkit';
+import { chordReducer, instrumentReducer } from './slice';
 
-const initialState = {
-  instrument: 'urduk',
-  key: '',
-  suffix: '',
-  chord: {
-    midi: [],
-  },
-};
-
-const enhancer = devToolsEnhancer();
-
-export const store = createStore(rootReducer, enhancer);
+export const store = configureStore({
+  reducer: { chord: chordReducer, instrument: instrumentReducer },
+});

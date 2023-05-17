@@ -1,13 +1,19 @@
 import { useState } from 'react';
 import tabs from '../../db.json';
 import { ListSuffixes, ListItem } from './NavigationSuffix.styled';
+import { addSuffix } from 'redux/slice';
+import { useDispatch } from 'react-redux';
 
 export const NavigationSuffix = ({ ss, k }) => {
   const [selected, setSelected] = useState(false);
 
+  const dispatch = useDispatch();
+
   const onClick = event => {
-    ss(event.target.outerText);
+    // ss(event.target.outerText);
     setSelected(event.target.textContent);
+
+    dispatch(addSuffix(event.target.textContent));
   };
 
   let allSuffix = tabs.suffixes;

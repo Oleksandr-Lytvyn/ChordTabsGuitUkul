@@ -5,7 +5,7 @@ import {
   StyledChordGuitarWrapper,
   StyledChordGuitar,
 } from './ChordGuitar.styled';
-import { addMidi } from '../../redux/actions';
+// import { addMidi } from '../../redux/actions';
 
 const Finger = ({ step }) => {
   const finger = {};
@@ -65,13 +65,13 @@ const Finger = ({ step }) => {
 };
 
 export const ChordGuitar = ({ steps, midi, play, setNotes }) => {
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
   return (
     <StyledChordGuitarWrapper>
       <div>
         <StyledChordGuitar
           onClick={e => {
-            dispatch(addMidi(midi));
+            // dispatch(addMidi(midi));
             setNotes(midi);
             setTimeout(() => {
               play();

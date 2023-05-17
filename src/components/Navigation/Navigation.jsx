@@ -6,8 +6,8 @@ import { NavigationInst } from '../NavigationInst/NavigationInst';
 export const Navigation = options => {
   return (
     <>
-      <NavigationInst si={options.si} />
-      <NavigationKey sk={options.sk} />
+      <NavigationInst />
+      <NavigationKey />
       <NavigationSuffix ss={options.ss} k={options.k} />
       {/* <NavigationForm k={options.k} s={options.s} /> */}
     </>
