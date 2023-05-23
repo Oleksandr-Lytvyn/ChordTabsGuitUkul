@@ -23,6 +23,7 @@ export const getMidiNote = (step, i) => {
     default:
       break;
   }
-  let midiNote = step.fret + string;
+  let midiNote = step.fret + string + step.baseFret;
+  // console.log(step);
   return midiNote;
 };

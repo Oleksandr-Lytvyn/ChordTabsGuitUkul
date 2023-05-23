@@ -1,6 +1,4 @@
 import { nanoid } from 'nanoid';
-import { useDispatch } from 'react-redux';
-import { useSelector } from 'react-redux';
 import {
   StyledChordGuitarWrapper,
   StyledChordGuitar,
@@ -66,35 +64,22 @@ const Finger = ({ step, onClick }) => {
 };
 
 export const ChordGuitar = ({ steps, midi, play, setNotes, baseFret }) => {
-  // const dispatch = useDispatch();
-  console.log(steps);
   let i = 0;
   return (
     <StyledChordGuitarWrapper>
       <div>
-        <StyledChordGuitar
-        // onClick={e => {
-        //   // dispatch(addMidi(midi));
-        //   console.log('click');
-        //   setNotes(midi);
-        //   setTimeout(() => {
-        //     play();
-        //   }, 100);
-        // }}
-        >
+        <StyledChordGuitar>
           {steps.map(step => {
+            i += 1;
             const note = getMidiNote(step, i).toString();
 
-            i += 1;
             return (
               <Finger
                 onClick={e => {
-                  // dispatch(addMidi(midi));
-                  console.log('click', note);
                   setNotes(note);
                   setTimeout(() => {
                     play();
-                  }, 100);
+                  }, 50);
                 }}
                 key={nanoid()}
                 step={step}
