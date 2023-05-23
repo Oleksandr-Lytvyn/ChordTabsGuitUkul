@@ -4,12 +4,15 @@ import { StyledGuitarTabsList } from './GuitarTabsList.styled';
 import { Position } from './Position';
 
 export const GuitarTabsList = ({ chord, play, setNotes }) => {
+  // const chord2 = useSelector(state => state.chord);
+  // console.log(chord2);
+  // console.log(chord);
+
   return (
     <>
       {!chord && <div>no results</div>}
 
       <StyledGuitarTabsList>
-        {/* <h1>Guitar</h1> */}
         <h2>
           {chord.key} {chord.suffix}
         </h2>

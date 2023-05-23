@@ -5,9 +5,9 @@ import {
   StyledChordGuitarWrapper,
   StyledChordGuitar,
 } from './ChordGuitar.styled';
-// import { addMidi } from '../../redux/actions';
+import { getMidiNote } from 'service/getMidiNote';
 
-const Finger = ({ step }) => {
+const Finger = ({ step, onClick }) => {
   const finger = {};
   if (step.fret === -1) {
     finger.vertical = '0';
@@ -43,6 +43,7 @@ const Finger = ({ step }) => {
 
   return (
     <div
+      onClick={onClick}
       style={{
         width: '16px',
         height: '16px',
@@ -64,22 +65,42 @@ const Finger = ({ step }) => {
   );
 };
 
-export const ChordGuitar = ({ steps, midi, play, setNotes }) => {
+export const ChordGuitar = ({ steps, midi, play, setNotes, baseFret }) => {
   // const dispatch = useDispatch();
+  console.log(steps);
+  let i = 0;
   return (
     <StyledChordGuitarWrapper>
       <div>
         <StyledChordGuitar
-          onClick={e => {
-            // dispatch(addMidi(midi));
-            setNotes(midi);
-            setTimeout(() => {
-              play();
-            }, 100);
-          }}
+        // onClick={e => {
+        //   // dispatch(addMidi(midi));
+        //   console.log('click');
+        //   setNotes(midi);
+        //   setTimeout(() => {
+        //     play();
+        //   }, 100);
+        // }}
         >
           {steps.map(step => {
-            return <Finger key={nanoid()} step={step}></Finger>;
+            const note = getMidiNote(step, i).toString();
+
+            i += 1;
+            return (
+              <Finger
+                onClick={e => {
+                  // dispatch(addMidi(midi));
+                  console.log('click', note);
+                  setNotes(note);
+                  setTimeout(() => {
+                    play();
+                  }, 100);
+                }}
+                key={nanoid()}
+                step={step}
+                note={note}
+              ></Finger>
+            );
           })}
         </StyledChordGuitar>
       </div>

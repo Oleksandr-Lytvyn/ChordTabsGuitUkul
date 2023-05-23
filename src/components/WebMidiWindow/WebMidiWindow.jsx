@@ -6,10 +6,9 @@ import { StyledWebMidi } from './WebMidiWindow.styled';
 
 export class WebMidiWindow extends Component {
   playTestInstrument() {
-    this.midiSounds.playChordNow(3, this.props.note, 2.5);
+    this.midiSounds.playChordNow(3, [this.props.note], 2.5);
   }
   render() {
-    console.log(this);
     return (
       <div className="App">
         {this.props.i === 'guit' && (

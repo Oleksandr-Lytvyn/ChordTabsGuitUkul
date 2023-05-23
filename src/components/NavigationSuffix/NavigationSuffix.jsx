@@ -2,15 +2,15 @@ import { useState } from 'react';
 import tabs from '../../db.json';
 import { ListSuffixes, ListItem } from './NavigationSuffix.styled';
 import { addSuffix } from 'redux/slice';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
-export const NavigationSuffix = ({ ss, k }) => {
+export const NavigationSuffix = () => {
   const [selected, setSelected] = useState(false);
+  const k = useSelector(state => state.chord.key);
 
   const dispatch = useDispatch();
 
   const onClick = event => {
-    // ss(event.target.outerText);
     setSelected(event.target.textContent);
 
     dispatch(addSuffix(event.target.textContent));
@@ -43,7 +43,6 @@ export const NavigationSuffix = ({ ss, k }) => {
     <div>
       <ListSuffixes>
         {resultSuffixes.map(ch => {
-          // console.log(suffix);
           return (
             <ListItem
               key={ch.suffix}

@@ -7,10 +7,11 @@ import './index.css';
 import { useSelector } from 'react-redux';
 
 export function App() {
+  const [chord, setChord] = useState({});
+
   const instrument = useSelector(state => state.instrument.instrument);
   const key = useSelector(state => state.chord.key);
   const suffix = useSelector(state => state.chord.suffix);
-  const [chord, setChord] = useState({});
   useEffect(() => {
     const findedChord = getChord(key, suffix, instrument);
     setChord(findedChord);
@@ -18,7 +19,7 @@ export function App() {
 
   return (
     <>
-      <Navigation k={key} />
+      <Navigation />
       {chord && <ResultsWindow ch={chord} i={instrument} />}
     </>
   );

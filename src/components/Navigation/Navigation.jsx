@@ -3,12 +3,12 @@ import { NavigationKey } from '../NavigationKey/NavigationKey';
 import { NavigationSuffix } from '../NavigationSuffix/NavigationSuffix';
 import { NavigationInst } from '../NavigationInst/NavigationInst';
 
-export const Navigation = options => {
+export const Navigation = () => {
   return (
     <>
       <NavigationInst />
       <NavigationKey />
-      <NavigationSuffix ss={options.ss} k={options.k} />
+      <NavigationSuffix />
       {/* <NavigationForm k={options.k} s={options.s} /> */}
     </>
   );
