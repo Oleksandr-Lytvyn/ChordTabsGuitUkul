@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/ChordTabsGuitUkul/static/css/main.980690d3.css",
-    "main.js": "/ChordTabsGuitUkul/static/js/main.e6c04d79.js",
+    "main.css": "/ChordTabsGuitUkul/static/css/main.34291164.css",
+    "main.js": "/ChordTabsGuitUkul/static/js/main.9b017cd7.js",
     "index.html": "/ChordTabsGuitUkul/index.html",
-    "main.980690d3.css.map": "/ChordTabsGuitUkul/static/css/main.980690d3.css.map",
-    "main.e6c04d79.js.map": "/ChordTabsGuitUkul/static/js/main.e6c04d79.js.map"
+    "main.34291164.css.map": "/ChordTabsGuitUkul/static/css/main.34291164.css.map",
+    "main.9b017cd7.js.map": "/ChordTabsGuitUkul/static/js/main.9b017cd7.js.map"
   },
   "entrypoints": [
-    "static/css/main.980690d3.css",
-    "static/js/main.e6c04d79.js"
+    "static/css/main.34291164.css",
+    "static/js/main.9b017cd7.js"
   ]
 }
