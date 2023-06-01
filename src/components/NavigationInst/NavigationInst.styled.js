@@ -5,8 +5,8 @@ export const StyledButton = styled.button`
   height: 50px;
   width: 100%;
   border: none;
-  /* background-color: transparent; */
-  background: ${props => (props.primary ? 'green' : 'transparent')};
+  background: ${props =>
+    props.primary ? props.theme.colors.mainGreen : 'transparent'};
   color: ${props => (props.primary ? 'white' : 'gray')};
   border-bottom: 1px solid grey;
   cursor: pointer;
@@ -18,6 +18,7 @@ export const StyledButton = styled.button`
 
 export const StyledBtnsList = styled.ul`
   display: flex;
+  width: 100%;
   list-style: none;
   gap: 15px;
   width: 100%;
